@@ -24,7 +24,7 @@ def pdf_to_images(uploaded_file):
 
     for page_number in range(pdf_document.page_count):
         page = pdf_document[page_number]
-        pixmap = page.get_pixmap()
+        pixmap = page.get_pixmap(matrix=fitz.Matrix(3, 3))
         image = Image.frombytes("RGB", [pixmap.width, pixmap.height], pixmap.samples)
         images.append(image)
 
