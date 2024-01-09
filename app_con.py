@@ -94,8 +94,31 @@ def convert_data():
     Ensure that all currency values are converted to a standard currency format.
 
     Date Time Formatting:
-    Identify date and time information in the text.
-    Standardize the date format to dd/mm/yyyy.
+    Identify date and time information in the text. note that there are no bills for the future months
+    There might be dates presented in following formats dd/mm/yyyy, mm/dd/yyyy, yyyy/mm/dd, carefully note them and Standardize the date format to dd/mm/yyyy.
+
+    Note - if there is a conflict with detecting the initial format is dd/mm/yyy or mm/dd/yyyy use the fact that months cannot pass the numbrt 12. so month have to be between 1-12, use this to resolve the conflict.
+    
+    Follow these steps to resolve the conflict, and use the same steps to standardize the other formats.
+    
+    Given date : 11/13/2023
+
+    Question: What is the given date format ?
+    Thought : If the given date is 11/13/2023. Since the month is 13, and months cannot exceed 12.
+    Action : we can conclude that this date is in the mm/dd/yyyy format.
+    Observation : Month(mm) is 11, date(dd) is 13, year(yyyy) is 2023.
+
+    Question: What is the given date in words ?
+    Thought : I want to convert to date-month-year in words
+    Action : The date in number is 13 so in words its Thirteenth, Month in number is 11 so in word its November, year in number is 2023 so in words its two thousand twenty-three.
+    Observation : Thirteenth of November Two thousand twenty-three.
+
+    Question: What is the given date in standardize the date format (dd/mm/yyyy) ?
+    Thought : I want to convert to date-month-year in words into standardized date format is dd/mm/yyyy.
+    Action : date : Thirteenth of November Two thousand twenty-three means 13th of 11th month 2023rd year so its 13/11/2023.
+    Observation : 13/11/2023 in dd/mm/yyyy format.
+
+    Note - so [01-31]/[01-12]/[0000-9999] is the dd/mm/yyyy format and [1-12]/[1-31]/[0000-9999] is the mm/dd/yyyy format.
 
     Invoice Placement:
     Segment the JSON output to clearly distinguish the invoice-related information.
