@@ -87,6 +87,7 @@ def convert_data():
 
     Format Inconsistency:
     Check for any inconsistencies in formatting throughout the document.
+    Standardize P.O numbers in invoices to contain 10 digits. If there are multiple P.O numbers, create a mapping system to standardize the format under each relevant key in the JSON. ex: 7100045685 - 45659  =  7100045685, 7100045659. 
     If there are variations, create a mapping system to standardize the format under each relevant key in the JSON.
 
     Standard Currency:
