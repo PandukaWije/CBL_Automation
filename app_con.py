@@ -90,8 +90,9 @@ def convert_data():
     Identify and extract the Vendor and End Customer details.
     Assign this to the corresponding key in the JSON.
 
-    P.O number and Format Inconsistency:
+    P.O number and Format Inconsistency: (Give special attention to PO number its a Critical one and one of the most challenging one)
     Check for any inconsistencies in formatting throughout the document.
+    if the PO Number is handwritten you should check with other numbers to varify the findings.
     P.O Number also known as Order Number in invoices, Its a single 10 digits number (no letters in any part). If there are multiple P.O numbers, identity them and mapping them in a standardize format under each relevant key in the JSON. ex: 7100045685 - 45659  =  7100045685, 7100045659. 
 
     Standard Currency:
