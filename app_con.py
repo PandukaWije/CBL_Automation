@@ -85,14 +85,14 @@ def convert_data():
     Identify and extract the document title from the text.
     Assign this to the corresponding key in the JSON.
 
-    Format Inconsistency:
+    P.O number and Format Inconsistency:
     Check for any inconsistencies in formatting throughout the document.
-    P.O Number also known as Order Number in invoices to contain 10 digits. If there are multiple P.O numbers, create a mapping system to standardize the format under each relevant key in the JSON. ex: 7100045685 - 45659  =  7100045685, 7100045659. 
-    If there are variations, create a mapping system to standardize the format under each relevant key in the JSON and Return under P.O number.
+    P.O Number also known as Order Number in invoices, Its a single 10 digits number (no letters in any part). If there are multiple P.O numbers, identity them and mapping them in a standardize format under each relevant key in the JSON. ex: 7100045685 - 45659  =  7100045685, 7100045659. 
 
     Standard Currency:
     Look for currency information in the text.
-    Ensure that all currency values are converted to a standard currency format in the ISO 4217 alpha codes. mention Currency in output
+    Ensure that all currency values are converted to a standard currency format in the ISO 4217 (LKR, USD, EUR, ...). mention Currency in output.
+    All the Currency in output should be in one format , prefred in ISO 4217 (LKR, USD, EUR, ...)
 
     Date Time Formatting:
     Identify date and time information in the text. note that there are no bills for the future months
