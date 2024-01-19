@@ -83,6 +83,11 @@ def convert_data():
 
     Document Title:
     Identify and extract the document title from the text.
+    **if there is no VAT value or Value is 0 then the document title is Invoice, if there is a VAT value then the document title is Tax Invoice
+    Assign this to the corresponding key in the JSON.
+
+    Vendor Details and End Customer details:
+    Identify and extract the Vendor and End Customer details.
     Assign this to the corresponding key in the JSON.
 
     P.O number and Format Inconsistency:
@@ -121,6 +126,10 @@ def convert_data():
     Segment the JSON output to clearly distinguish the invoice-related information.
     The JSON structure should be organized to clearly represent each segment of the invoice (e.g., header, line items, totals).
 
+    Payment Details:
+    Identify and extract the Total Amount/ Grand Total, Tax details , VAT, GST, etc. from the text.
+    Assign this to the corresponding key in the JSON.
+    
     Consistency Across the Document:
     JSON format will be used later to convert this information into a pandas dataframe so ensure the output is consistent and compatible with this format.
     Confirm that the JSON format is consistent throughout the entire document.
