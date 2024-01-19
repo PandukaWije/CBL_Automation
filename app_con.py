@@ -87,21 +87,19 @@ def convert_data():
 
     Format Inconsistency:
     Check for any inconsistencies in formatting throughout the document.
-    Standardize P.O numbers in invoices to contain 10 digits. If there are multiple P.O numbers, create a mapping system to standardize the format under each relevant key in the JSON. ex: 7100045685 - 45659  =  7100045685, 7100045659. 
-    If there are variations, create a mapping system to standardize the format under each relevant key in the JSON.
+    P.O Number also known as Order Number in invoices to contain 10 digits. If there are multiple P.O numbers, create a mapping system to standardize the format under each relevant key in the JSON. ex: 7100045685 - 45659  =  7100045685, 7100045659. 
+    If there are variations, create a mapping system to standardize the format under each relevant key in the JSON and Return under P.O number.
 
     Standard Currency:
     Look for currency information in the text.
-    Ensure that all currency values are converted to a standard currency format.
+    Ensure that all currency values are converted to a standard currency format in the ISO 4217 alpha codes. mention Currency in output
 
     Date Time Formatting:
     Identify date and time information in the text. note that there are no bills for the future months
     There might be dates presented in following formats dd/mm/yyyy, mm/dd/yyyy, yyyy/mm/dd, carefully note them and Standardize the date format to dd/mm/yyyy.
 
     Note - if there is a conflict with detecting the initial format is dd/mm/yyy or mm/dd/yyyy use the fact that months cannot pass the numbrt 12. so month have to be between 1-12, use this to resolve the conflict.
-    
     Follow these steps to resolve the conflict, and use the same steps to standardize the other formats.
-    
     Given date : 11/13/2023
 
     Question: What is the given date format ?
@@ -118,8 +116,6 @@ def convert_data():
     Thought : I want to convert to date-month-year in words into standardized date format is dd/mm/yyyy.
     Action : date : Thirteenth of November Two thousand twenty-three means 13th of 11th month 2023rd year so its 13/11/2023.
     Observation : 13/11/2023 in dd/mm/yyyy format.
-
-    Note - so [01-31]/[01-12]/[0000-9999] is the dd/mm/yyyy format and [1-12]/[1-31]/[0000-9999] is the mm/dd/yyyy format.
 
     Invoice Placement:
     Segment the JSON output to clearly distinguish the invoice-related information.
