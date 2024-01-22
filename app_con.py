@@ -201,10 +201,11 @@ def display_content(content):
 def main():
   st.set_page_config(page_title='LLM Automation', layout='wide')
 
-  st.image("./CBL_Logo.png")
+  # st.image("./CBL_Logo.png")
 
-  st.title("LLM aided Invoice Data Extraction")
-  st.write("### Upload a PDF file to extract data")
+  st.title("LLM aided Invoice Data Extraction / Refinement")
+  # st.title("LLM aided Invoice Data Extraction")
+  st.write("### Upload a PDF file (Invoice) to extract data")
 
   _ , content = convert_data()
   if content is not None:
